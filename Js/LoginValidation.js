@@ -1,13 +1,22 @@
+
+var  f =  new Error("name must include only letters");
+
 function Reg(){
+    try{
     if (!isNaN(document.getElementById("username").value)||(document.getElementById("username").value)=="")
         {
-            alert("name must include only letters ");
-            return false;
+            throw f;
         }
         else
         {
-        document.cookie= "name =" +document.getElementById("username").value ;
-        document.cookie= "pass =" +document.getElementById("password").value ;
-        location.replace("Begin.html");
+        setCookie("name",document.getElementById("username").value);
+        setCookie("pass",document.getElementById("password").value);
+        //location.replace("Begin.html");
         }      
         }
+    
+    
+        catch(e){
+            alert(e.message);
+            return false;
+            }}

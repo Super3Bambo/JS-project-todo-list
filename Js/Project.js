@@ -48,18 +48,15 @@ function cloneNewList() {
 
         newnode.removeAttribute('id')
         mynode=newnode.firstElementChild.nextElementSibling;
-       // console.log(newnode.firstElementChild.nextElementSibling);
         while (mynode.lastElementChild) {
             mynode.removeChild(mynode.lastElementChild);}
        
-        //newnode.firstElementChild.nextElementSibling.removeChild()
 
         newnode.firstElementChild.nextElementSibling.nextElementSibling.id = 's'+Math.floor(Math.random() * 100);
-        console.log(newnode.firstElementChild.nextElementSibling.id)
         newnode.firstElementChild.innerHTML = title;
 
+        
         newnode.lastElementChild.lastElementChild.id = 's'+Math.floor(Math.random() * 100)
-        console.log(newnode.lastElementChild.lastElementChild)
             $(newnode).css("display","none");
         document.body.firstElementChild.nextElementSibling.nextElementSibling.
             firstElementChild.append(newnode);
@@ -80,15 +77,12 @@ function addCard(c) {
             var cardContent = $('#'+x).parent().siblings("#textarea").val();
             $('#'+x).parent().siblings("#textarea").focus();
             if(!cardContent==null || !cardContent==''){
-            console.log(cardContent)
             var newcard = document.body.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.cloneNode(true);
-            //newcard.style.display='block';
             $(newcard).fadeIn(1000);
-            //console.log(newcard)
             newcard.id='s'+Math.floor(Math.random() * 100);
-            //newcard.onclick=moveCard;
             var placetoappend=
             document.getElementById(x).parentNode.parentNode.previousElementSibling.previousElementSibling;
+
             placetoappend.append(newcard);
             newcard.firstElementChild.innerHTML+=cardContent;
             $('#'+x).parent().siblings("#textarea").val("");
@@ -105,8 +99,6 @@ function moveList(c){
         revert: true
             });
             $( '#listssss' ).disableSelection();
-            
-
 }
 function removeCard(c){
     $(c).parent().effect("shake",200);
@@ -120,12 +112,11 @@ function moveCard(c){
         connectWith: ".cardsss",
         revert: true
     });}
+
 function update_card(c){
     var x=c.id;
-  //  console.log(x);
      var cardContent =$('#'+x).parent().siblings("#textarea").val();
      if(!cardContent==null || !cardContent==''){
-        // console.log( $('#'+x).parent().parent().prev().children().last());
     $('#'+x).parent().parent().prev().children().first().text(cardContent);
     $('#'+x).parent().parent().prev().css("display", "block");
     $('#'+x).parent().parent().css("display", "none")}
@@ -140,12 +131,12 @@ function cancel_update(c){
 
     function editCard(c){
         var butid= 's'+Math.floor(Math.random() * 100);
-var crossid='c'+Math.floor(Math.random() * 100);
+        var crossid='c'+Math.floor(Math.random() * 100);
             var x=c.id;
         $("#"+ x).css("display","none");
         
        var old= $(c).children().first().text();
-       console.log($(c).children().first())
+
 
         $('<div id="hiddeninput" class="hiddeninput" >'+'<textarea id="textarea">'+old+'</textarea>'+
         '<div id="butt">'+
@@ -156,5 +147,10 @@ var crossid='c'+Math.floor(Math.random() * 100);
         //$(c).children().first().css("display","block");///////////////////////////////
 
     }
+    function goBack(){
+        location.assign('Begin.html')
+    }
+
+
 var listnames=getcookie("listname");
 document.getElementById('nameoflist').innerHTML=  listnames+" List " ;
