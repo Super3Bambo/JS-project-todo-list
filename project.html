@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <head>
-    <link href="Css/style.css" rel="stylesheet">
+    <link href="Css/styleProject.css" rel="stylesheet">
     </link>
 </head>
 <body> <div class="header" id="header">
-    <img src="images/1.png" >
+    <img src="images/1.png">
     <div id="slogen" onclick="goBack()">  <b>To Do Best</b></div>
 </div>
 <div class="secondheader">
@@ -17,7 +17,7 @@
     <div id="listssss" style="width: auto; height: 100%; display: inline;" style="overflow: visible;">
     
     <div class="mainlist" id="mainlist"  onclick="moveList(this)">
-        <div class="list_description">
+        <div class="list_description" style="background-color:purple">
             To Do
         </div>
 
@@ -43,7 +43,7 @@
 
 
     <div class="mainlist" id="mainlist"   onclick="moveList(this)">
-        <div class="list_description">In Progress</div>
+        <div class="list_description" style="background-color: #27A401;">In Progress</div>
         <div class="cardsss" >
 
             
@@ -63,7 +63,7 @@
 
 
     <div class="mainlist"  id="mainlist" onclick="moveList(this)">
-        <div class="list_description">
+        <div class="list_description" style="background-color: #104CED;">
             Done
 
         </div>
@@ -82,6 +82,7 @@
             <div class="cross" id="cross3" onclick="showHide(this)"> &#10006; </div>
         </div>
     </div>
+
 </div>
 
     <div  style="height: 100%; display: inline;"></div>

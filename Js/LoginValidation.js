@@ -3,7 +3,7 @@ var  f =  new Error("name must include only letters");
 
 function Reg(){
     try{
-    if (!isNaN(document.getElementById("username").value)||(document.getElementById("username").value)=="")
+    if (!isNaN(document.getElementById("username").value))
         {
             throw f;
         }
