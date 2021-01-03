@@ -54,7 +54,7 @@ function cloneNewList() {
 
     if (!title == null || !title == '') {
         var newnode = document.getElementById('mainlist').cloneNode(true);
-        newnode.lastElementChild.firstElementChild.nextElementSibling.firstElementChild.id='ss'+Math.floor(Math.random() * 100);
+        newnode.lastElementChild.firstElementChild.nextElementSibling.firstElementChild.id='kk'+Math.floor(Math.random() * 100000);
 
         newnode.removeAttribute('id');
         mynode=newnode.firstElementChild.nextElementSibling;
@@ -63,12 +63,12 @@ function cloneNewList() {
         }
        
 
-        newnode.firstElementChild.nextElementSibling.nextElementSibling.id = 'ss'+Math.floor(Math.random() * 100);
+        newnode.firstElementChild.nextElementSibling.nextElementSibling.id = 'dd'+Math.floor(Math.random() * 100000);
         newnode.firstElementChild.innerHTML = title;
         newnode.firstElementChild.style.backgroundColor=generateRandomColor();
 
         
-        newnode.lastElementChild.lastElementChild.id = 'ss'+Math.floor(Math.random() * 100)
+        newnode.lastElementChild.lastElementChild.id = 'ss'+Math.floor(Math.random() * 100000)
             $(newnode).css("display","none");
         document.body.firstElementChild.nextElementSibling.nextElementSibling.
             firstElementChild.append(newnode);
@@ -92,7 +92,7 @@ function addCard(c) {
             if(!cardContent==null || !cardContent==''){
             var newcard = document.body.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.cloneNode(true);
             $(newcard).fadeIn(1000);
-            newcard.id='s'+Math.floor(Math.random() * 100);
+            newcard.id='s'+Math.floor(Math.random() * 100000);
             var placetoappend=
             document.getElementById(x).parentNode.parentNode.previousElementSibling.previousElementSibling;
 
@@ -145,8 +145,8 @@ function cancel_update(c){
 
 
     function editCard(c){
-        var butid= 'ss'+Math.floor(Math.random() * 100);
-        var crossid='cc'+Math.floor(Math.random() * 100);
+        var butid= 'ff'+Math.floor(Math.random() * 100000);
+        var crossid='cc'+Math.floor(Math.random() * 100000);
             var x=c.id;
         $("#"+ x).css("display","none");
         
